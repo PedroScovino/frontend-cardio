@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title text-center>
+      APP-Cardio
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item padding-top>
+    <ion-input type="email" text-center placeholder="Email" [(ngModel)]="usuario.email" #email="ngModel" required>
+      <ion-icon  name="person"></ion-icon>
+    </ion-input>
+  </ion-item>
+  <ion-item *ngIf="email.errors && (email.dirty || email.touched)" class="text-danger">
+    O campo é obrigatório
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="password" text-center placeholder="Senha" [(ngModel)]="usuario.senha" #password="ngModel" required>
+      <ion-icon name="unlock"></ion-icon>
+    </ion-input>
+  </ion-item>
+  <ion-item *ngIf="password.errors && (password.dirty || password.touched)" class="text-danger">
+    O campo é obrigatório
+  </ion-item>
+
+  <ion-button margin-top expand="full" color="danger" shape="round">
+    Login
+  </ion-button>
+
+  <ion-button margin-top href="/reset" expand="full" size="small" fill="outline" color="danger" shape="round">
+    Esqueceu sua senha?
+  </ion-button>
+
+  <ion-button margin-top href="/cadastrar" expand="full" size="small" fill="outline" color="danger" shape="round">
+    Criar conta
+  </ion-button>
+</ion-content>
